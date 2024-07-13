@@ -24,8 +24,7 @@ def is_relevant_filename(filename):
     pattern = r'\d{4}-\d{2}-\d{2}-friday-hacks-\d+\.md'
     return re.match(pattern, filename)
 
-def categorize_content(content):
-    retries = 3
+def categorize_content(content, retries=3):
     try:
         system = """
         You will be given some description about one or two talks.
