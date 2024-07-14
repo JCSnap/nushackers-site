@@ -37,8 +37,8 @@ def categorize_content(content, retries=3):
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": system},
-                {"role": "user", "content": one_shot_categories},
-                {"role": "assistant", "content": one_shot_content},
+                {"role": "user", "content": one_shot_content},
+                {"role": "assistant", "content": one_shot_categories},
                 {"role": "user", "content": prompt},
             ],
             max_tokens=100,
@@ -72,7 +72,6 @@ def process_files(folder_path):
         "Audience Participation": [],
     }
 
-    count = 0
     for filename in os.listdir(folder_path):
         if is_relevant_filename(filename):
             file_path = os.path.join(folder_path, filename)
